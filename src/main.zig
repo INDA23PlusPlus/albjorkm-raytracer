@@ -186,7 +186,7 @@ pub fn main() !void {
             .sphere = .{
                 .pos = Vec3{0, 0, 0},
                 .radius = 0.05,
-                .color = Color{0.9, 0.1, 0.1, 1},
+                .color = Color{0.9, 0.9, 0.1, 1},
             }
         }
     } ** 64;
@@ -203,7 +203,7 @@ pub fn main() !void {
             .sphere = .{
                 .pos = Vec3{-2, 1, -10},
                 .radius = 2,
-                .color = Color{0.9, 0.9, 0.5, 1},
+                .color = Color{0.9, 0.3, 0.5, 1},
             }
         },
         .{
@@ -233,7 +233,7 @@ pub fn main() !void {
     var randSeeded = std.rand.DefaultPrng.init(333);
     const rand = randSeeded.random();
     for (input_spheres[0..64]) |*flower| {
-        flower.sphere.pos = Vec3{(rand.float(f64) - 0.6) * 30, -1, (rand.float(f64) - 1) * 30};
+        flower.sphere.pos = Vec3{(rand.float(f64) - 0.6) * 30, -1, (rand.float(f64) - 1) * 20};
     }
 
     var lights = [_]Light {
